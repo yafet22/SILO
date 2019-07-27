@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">SILO</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_jadwal">Jadwal</string>
+    <string name="title_tugas">Tugas</string>
+    <string name="title_uang">Uang</string>
+    <string name="title_beranda">Beranda</string>
+    <string name="title_event">Events</string>
+    <string name="title_notifikasi">Notifikasi</string>
+    <string name="title_customer">Customer</string>
+
+    <string name="profile">PROFILE</string>
+    <string name="about">ABOUT</string>
+    <string name="website">WEBSITE</string>
+    <string name="logout">LOG OUT</string>
+
+    <string-array name="position">
+        <item>DPN</item>
+        <item>TGH</item>
+        <item>BLK</item>
+    </string-array>
+
+    <string-array name="place">
+        <item>KACA</item>
+        <item>DUS</item>
+        <item>BAN</item>
+        <item>KAYU</item>
+    </string-array>
+    <string name="title_activity_add_procurement">AddProcurement</string>
+
+    <string-array name="procurementstatus">
+        <item>Unprocessed</item>
+        <item>On Progress</item>
+        <item>Finish</item>
+    </string-array>
+
+    <string-array name="transactionstatus">
+        <item>unprocessed</item>
+        <item>on progress</item>
+        <item>finish</item>
+    </string-array>
+
+    <string-array name="transactiontype">
+        <item>Sparepart</item>
+        <item>Service</item>
+        <item>Service And Sparepart</item>
+    </string-array>
+
+    <string-array name="sort">
+        <item>Sort By Name Ascending</item>
+        <item>Sort By Name Descending</item>
+        <item>Sort By Low Stock</item>
+        <item>Sort By High Stock</item>
+        <item>Sort By Low Price</item>
+        <item>Sort By High Price</item>
+    </string-array>
+    <string name="title_activity_start">Start</string>
+
+</resources>
