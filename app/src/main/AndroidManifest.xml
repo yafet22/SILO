@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.UI.Login"></activity>
+        <activity android:name=".UI.UI.Profile"></activity>
+        <activity android:name=".UI.UI.Help" />
+        <activity android:name=".UI.UI.Comment" />
+        <activity android:name=".UI.UI.LandMarkDesc" />
+        <activity android:name=".UI.UI.Login" />
         <activity android:name=".UI.UI.Register" />
         <activity
             android:name=".UI.UI.Start"
@@ -23,8 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.UI.MainActivity">
-        </activity>
+        <activity android:name=".UI.UI.MainActivity" />
     </application>
 
 </manifest>

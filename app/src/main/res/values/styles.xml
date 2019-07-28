@@ -96,4 +96,9 @@
         <item name="android:background">@color/startblue</item>
     </style>
 
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/bpWhite</item>
+        <item name="colorControlActivated">@color/yellowwarning</item>
+    </style>
+
 </resources>

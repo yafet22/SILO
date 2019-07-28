@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     FrameLayout root;
     BottomNavigationView bottombar;
-    View contentHamburger;
+    View contentHamburger,back;
     ImageView contentRight;
     TextView title;
     RelativeLayout.LayoutParams fragmentparams;
@@ -62,10 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
         root = findViewById(R.id.root);
         contentHamburger = findViewById(R.id.content_hamburger);
+        back = findViewById(R.id.content_back);
 //        contentRight = findViewById(R.id.content_right);
         fragmentlayout = findViewById(R.id.scrollView2);
         fragmentparams = (RelativeLayout.LayoutParams) fragmentlayout.getLayoutParams();
         fab = findViewById(R.id.fab);
+
+        back.setVisibility(View.GONE);
+
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -89,13 +93,21 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //
-//        guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final Intent intent = new Intent(Beranda.this, EditUser.class);
-//                startActivity(intent);
-//            }
-//        });
+        guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+            }
+        });
+
+        guillotineMenu.findViewById(R.id.help_group).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(MainActivity.this, Help.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -232,6 +244,22 @@ public class MainActivity extends AppCompatActivity {
                 manager.beginTransaction().replace(R.id.fragmentplace, new FragmentBeranda()).commit();
                 title.setText("SILO");
                 fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
+//                contentRight.setVisibility(View.INVISIBLE);
+                fab.hide();
+                break;
+            case R.id.navigation_event:
+                view_position = 1;
+                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentSchedule()).commit();
+                title.setText("July");
+//                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
+//                contentRight.setVisibility(View.INVISIBLE);
+                fab.hide();
+                break;
+            case R.id.navigation_notifications:
+                view_position = 2;
+                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentNotification()).commit();
+                title.setText("Notifikasi Kegiatanmu");
+//                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
 //                contentRight.setVisibility(View.INVISIBLE);
                 fab.hide();
                 break;

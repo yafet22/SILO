@@ -37,12 +37,12 @@
 
         <TextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/profile"
+            android:text="Profile"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/feed_group"
+        android:id="@+id/help_group"
         style="@style/LinearLayout.GuillotineItem">
 
         <ImageView
@@ -51,7 +51,7 @@
 
         <TextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/about"
+            android:text="Bantuan dan Masukan"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
@@ -66,7 +66,7 @@
 
         <TextView
             style="@style/TextView.GuillotineItem.Selected"
-            android:text="@string/website"
+            android:text="Website"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
@@ -84,7 +84,7 @@
 
         <TextView
             style="@style/TextView.GuillotineItem"
-            android:text="@string/logout"
+            android:text="Logout"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 </LinearLayout>

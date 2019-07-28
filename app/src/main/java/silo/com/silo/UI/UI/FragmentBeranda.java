@@ -1,9 +1,12 @@
 package silo.com.silo.UI.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -15,7 +18,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,6 +47,11 @@ public class FragmentBeranda extends Fragment {
 //    private List<Customer> CustomerBundleFull;
 //    private AdapterBeranda berandaAdapter;
 //    private CustomerList customerList1;
+    FrameLayout hotel;
+    RelativeLayout.LayoutParams fragmentparams;
+    View fragmentlayout;
+    TextView title;
+
 
 
 //    SessionManager session;
@@ -92,6 +105,21 @@ public class FragmentBeranda extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.frg_beranda,container,false);
+        hotel = v.findViewById(R.id.Hotel);
+
+        hotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragmentplace, new FragmentLandMark(), "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Hotel");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
 //        rview = v.findViewById(R.id.customer_list);
 //        rview.setHasFixedSize(true);
 //        layout = new LinearLayoutManager(getContext());

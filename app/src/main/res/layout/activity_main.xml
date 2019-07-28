@@ -36,12 +36,21 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/content_hamburger"
+                android:id="@+id/content_hamburger"
+                style="@style/ImageView.Hamburger"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_action_hamburger"
+                android:tint="@color/bpDarker_blue" />
+
+                <ImageView
+                    android:id="@+id/content_back"
                     style="@style/ImageView.Hamburger"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
-                    android:src="@drawable/ic_action_hamburger"
+                    android:src="@drawable/ic_arrow_back_white_24dp"
                     android:tint="@color/bpDarker_blue" />
 
                 <TextView
@@ -68,7 +77,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.492">
+            app:layout_constraintVertical_bias="1.0">
 
             <ScrollView
                 android:id="@+id/scrollView2"
