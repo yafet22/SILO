@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
                 view_position = 0;
                 manager.beginTransaction().replace(R.id.fragmentplace, new FragmentBeranda()).commit();
                 title.setText("SILO");
-                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
+//                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
 //                contentRight.setVisibility(View.INVISIBLE);
                 fab.hide();
                 break;
