@@ -23,8 +23,9 @@ public class Login extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(Login.this, Start.class);
-                startActivity(intent);
+//                final Intent intent = new Intent(Login.this, Start.class);
+//                startActivity(intent);
+                finish();
             }
         });
 

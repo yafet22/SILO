@@ -54,36 +54,25 @@
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/firstName"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
             android:ems="10"
-            android:hint="Nama Depan"
+            android:hint="Nama"
             android:inputType="textPersonName"
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/lastName"
+            android:id="@+id/phoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
             android:ems="10"
-            android:hint="Nama Belakang"
+            android:hint="Nomor Telepon"
             android:inputType="textPersonName"
-            app:met_floatingLabel="highlight" />
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/email"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:ems="10"
-            android:hint="Email"
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText

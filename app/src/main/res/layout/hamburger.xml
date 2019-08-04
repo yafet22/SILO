@@ -75,7 +75,7 @@
         android:layout_height="@dimen/guillotine_divider_height" />
 
     <LinearLayout
-        android:id="@+id/logout_group"
+        android:id="@+id/login_group"
         style="@style/LinearLayout.GuillotineItem">
 
         <ImageView
@@ -83,8 +83,9 @@
             android:src="@drawable/ic_settings" />
 
         <TextView
+            android:id="@+id/login"
             style="@style/TextView.GuillotineItem"
-            android:text="Logout"
+            android:text="Login"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 </LinearLayout>

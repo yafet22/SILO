@@ -10,24 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.UI.Profile"></activity>
+        <activity android:name=".UI.UI.Verify"></activity>
+        <activity android:name=".UI.UI.Profile" />
         <activity android:name=".UI.UI.Help" />
         <activity android:name=".UI.UI.Comment" />
         <activity android:name=".UI.UI.LandMarkDesc" />
         <activity android:name=".UI.UI.Login" />
         <activity android:name=".UI.UI.Register" />
+        <activity android:name=".UI.UI.Start" />
         <activity
-            android:name=".UI.UI.Start"
+            android:name=".UI.UI.MainActivity"
             android:label="@string/title_activity_start"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.UI.MainActivity" />
     </application>
 
 </manifest>
