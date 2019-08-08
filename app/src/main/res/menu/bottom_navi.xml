@@ -6,14 +6,14 @@
         android:title="@string/title_beranda" />
 
     <item
-        android:id="@+id/navigation_event"
-        android:icon="@drawable/ic_event_black_24dp"
-        android:title="@string/title_event" />
+        android:id="@+id/navigation_bencana"
+        android:icon="@drawable/ic_mountain_hdr_white_24dp"
+        android:title="Bencana Alam" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifikasi" />
+        android:id="@+id/navigation_pertanian"
+        android:icon="@drawable/ic_local_florist_white_24dp"
+        android:title="Pertanian" />
 
     <item
         android:id="@+id/navigation_more"

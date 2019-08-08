@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (getIntent().getIntExtra("addDialog",0)){
             case 0: bottombar.setSelectedItemId(R.id.navigation_beranda); switchfragment(R.id.navigation_beranda);break;
-            case 1: bottombar.setSelectedItemId(R.id.navigation_event); switchfragment(R.id.navigation_event);break;
-            case 2: bottombar.setSelectedItemId(R.id.navigation_notifications); switchfragment(R.id.navigation_notifications);break;
+            case 1: bottombar.setSelectedItemId(R.id.navigation_bencana); switchfragment(R.id.navigation_bencana);break;
+            case 2: bottombar.setSelectedItemId(R.id.navigation_pertanian); switchfragment(R.id.navigation_pertanian);break;
             case 3: bottombar.setSelectedItemId(R.id.navigation_more); switchfragment(R.id.navigation_more);break;
         }
 
@@ -157,11 +157,11 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.navigation_beranda:
                             if(view_position != 0) switchfragment(R.id.navigation_beranda);
                             return true;
-                        case R.id.navigation_event:
-                            if(view_position != 1) switchfragment(R.id.navigation_event);
+                        case R.id.navigation_bencana:
+                            if(view_position != 1) switchfragment(R.id.navigation_bencana);
                             return true;
-                        case R.id.navigation_notifications:
-                            if(view_position != 2) switchfragment(R.id.navigation_notifications);
+                        case R.id.navigation_pertanian:
+                            if(view_position != 2) switchfragment(R.id.navigation_pertanian);
                             return true;
                         case R.id.navigation_more:
                             if(view_position != 3) switchfragment(R.id.navigation_more);
@@ -278,18 +278,18 @@ public class MainActivity extends AppCompatActivity {
 //                contentRight.setVisibility(View.INVISIBLE);
                 fab.hide();
                 break;
-            case R.id.navigation_event:
+            case R.id.navigation_bencana:
                 view_position = 1;
-                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentSchedule()).commit();
-                title.setText("July");
+                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentBencana()).commit();
+                title.setText("Bencana Alam");
 //                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
 //                contentRight.setVisibility(View.INVISIBLE);
                 fab.hide();
                 break;
-            case R.id.navigation_notifications:
+            case R.id.navigation_pertanian:
                 view_position = 2;
-                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentNotification()).commit();
-                title.setText("Notifikasi Kegiatanmu");
+                manager.beginTransaction().replace(R.id.fragmentplace, new FragmentPertanian()).commit();
+                title.setText("Pertanian");
 //                fragmentparams.addRule(RelativeLayout.CENTER_IN_PARENT);
 //                contentRight.setVisibility(View.INVISIBLE);
                 fab.hide();

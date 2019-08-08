@@ -28,4 +28,7 @@ public interface ApiClient {
     Call<ResponseBody> Verification(
             @Field("code")String name,
             @Field("phone_number")String phone_number);
+
+    @GET("posting")
+    Call<PostList> getPosts();
 }
