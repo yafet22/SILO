@@ -18,7 +18,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="52dp"
         android:fontFamily="@font/montserrat"
-        android:text="Masuk dengan Email"
+        android:text="Masuk dengan Nomor Telepon"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -53,14 +53,14 @@
         app:layout_constraintTop_toBottomOf="@+id/title">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/email"
+            android:id="@+id/phoneNumber"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="Nomor Telepon"
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -100,33 +100,33 @@
             android:textSize="16sp"
             />
 
-        <Button
-            android:id="@+id/loginFB"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Masuk dengan facebook"
-            android:drawableLeft="@drawable/ic_facebook_logo"
-            android:textColor="@color/bpWhite"
-            android:background="@color/colorPrimary"
-            android:textSize="18sp"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+        <!--<Button-->
+            <!--android:id="@+id/loginFB"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dp"-->
+            <!--android:text="Masuk dengan facebook"-->
+            <!--android:drawableLeft="@drawable/ic_facebook_logo"-->
+            <!--android:textColor="@color/bpWhite"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:textSize="18sp"-->
+            <!--android:layout_marginTop="120dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"/>-->
 
-        <Button
-            android:id="@+id/loginTwitter"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Masuk dengan twitter"
-            android:drawableLeft="@drawable/ic_twitter_logo_silhouette"
-            android:textColor="@color/bpWhite"
-            android:background="@color/endblue"
-            android:textSize="18sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+        <!--<Button-->
+            <!--android:id="@+id/loginTwitter"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dp"-->
+            <!--android:text="Masuk dengan twitter"-->
+            <!--android:drawableLeft="@drawable/ic_twitter_logo_silhouette"-->
+            <!--android:textColor="@color/bpWhite"-->
+            <!--android:background="@color/endblue"-->
+            <!--android:textSize="18sp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"/>-->
 
     </LinearLayout>
 

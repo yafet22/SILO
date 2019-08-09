@@ -29,6 +29,12 @@ public interface ApiClient {
             @Field("code")String name,
             @Field("phone_number")String phone_number);
 
+    @POST("login")
+    @FormUrlEncoded
+    Call<ResponseBody> GetLogin(
+            @Field("phone_number")String phone_number,
+            @Field("password")String password);
+
     @GET("posting")
     Call<PostList> getPosts();
 }
