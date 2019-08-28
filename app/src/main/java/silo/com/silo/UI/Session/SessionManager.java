@@ -24,6 +24,7 @@ public class SessionManager {
     public static final String KEY_ID = "id";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PHONE = "phone";
+    public static final String KEY_STATUS = "status";
 
     public SessionManager(Context context)
     {
@@ -32,12 +33,13 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-    public void createLoginSessions(String phoneNumber, String username, String id)
+    public void createLoginSessions(String phoneNumber, String username, String id, String status)
     {
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_PHONE, phoneNumber);
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_ID, id);
+        editor.putString(KEY_STATUS, status);
         editor.commit();
     }
 
@@ -72,9 +74,19 @@ public class SessionManager {
         return pref.getString(KEY_ID,"id");
     }
 
-    public String getKeyRole()
+    public String getKeyName()
     {
-        return pref.getString(KEY_PHONE,"role");
+        return pref.getString(KEY_USERNAME,"name");
+    }
+
+    public String getKeyPhone()
+    {
+        return pref.getString(KEY_PHONE,"phone");
+    }
+
+    public String getKeyStatus()
+    {
+        return pref.getString(KEY_STATUS,"status");
     }
 
     public void logoutUser(){

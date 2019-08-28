@@ -93,7 +93,7 @@
     <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
         <item name="colorAccent">@color/bgLogin</item>
         <item name="android:textColorPrimary">@color/bgLogin</item>
-        <item name="android:background">@color/startblue</item>
+        <item name="android:background">@color/redSilo</item>
     </style>
 
     <style name="RatingBar" parent="Theme.AppCompat">

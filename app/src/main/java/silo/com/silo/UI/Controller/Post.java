@@ -4,7 +4,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Post {
-
+    @SerializedName("id")
+    @Expose
+    private int id;
     @SerializedName("title")
     @Expose
     private String title;
@@ -32,12 +34,21 @@ public class Post {
      * @param description
      * @param photo
      */
-    public Post(String title, String photo, String description, String category) {
+    public Post(int id,String title, String photo, String description, String category) {
         super();
+        this.id = id;
         this.title = title;
         this.photo = photo;
         this.description = description;
         this.category = category;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

@@ -37,4 +37,19 @@ public interface ApiClient {
 
     @GET("posting")
     Call<PostList> getPosts();
+
+    @GET("bencana-alam")
+    Call<PostList> getBencana();
+
+    @GET("pertanian")
+    Call<PostList> getPertanian();
+
+    @GET("comment-post/{id}")
+    Call<CommentList> getComment(@Path("id") int id);
+
+    @POST("comment")
+    @FormUrlEncoded
+    Call<CommentData> addComment(@Field("content") String content,
+                                   @Field("id_posting") int id_posting,
+                                   @Field("id_user") int id_user);
 }

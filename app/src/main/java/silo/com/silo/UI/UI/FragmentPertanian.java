@@ -4,12 +4,20 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.victor.loading.rotate.RotateLoading;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +43,11 @@ public class FragmentPertanian extends Fragment {
     private List<Post> PostBundleFull;
     private PostList postList1;
 
+    private ImageView emptyLogo;
+    private TextView emptyText;
+    private RotateLoading rotateLoading;
+    private LinearLayout line;
+
     SessionManager session;
 
     @Override
@@ -52,6 +65,29 @@ public class FragmentPertanian extends Fragment {
         layout = new LinearLayoutManager(getContext());
         rview.setLayoutManager(layout);
 
+        emptyLogo = v.findViewById(R.id.emptyLogo);
+        emptyText = v.findViewById(R.id.emptyText);
+        rotateLoading = v.findViewById(R.id.rotateloading);
+
+        rotateLoading.start();
+
+        ImageView back = (ImageView) getActivity().findViewById(R.id.content_back);
+        back.setVisibility(View.VISIBLE);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.VISIBLE);
+                ImageView back2 = (ImageView) getActivity().findViewById(R.id.content_back);
+                back2.setVisibility(View.GONE);
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragmentplace, new FragmentBeranda(), "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("SILO");
+                ft.commit();
+            }
+        });
+
         postList = new ArrayList<>();
         feedAdapter = new AdapterFeed(postList1,this.getContext());
 
@@ -62,26 +98,42 @@ public class FragmentPertanian extends Fragment {
 
         ApiClient apiClient = retrofit.create(ApiClient.class);
 
-        Call<PostList> supplierGet = apiClient.getPosts();
+        Call<PostList> supplierGet = apiClient.getPertanian();
 
         supplierGet.enqueue(new Callback<PostList>() {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 try {
-                    adapter = new AdapterFeed(response.body(),getContext());
-                    PostBundleFull =  response.body().getData();
-                    //                   adapter.notifyDataSetChanged();
+                    if(!response.body().getData().isEmpty()) {
+                        adapter = new AdapterFeed(response.body(), getContext());
+                        PostBundleFull = response.body().getData();
+                        //                   adapter.notifyDataSetChanged();
 //                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
 //                    rview.setLayoutManager(mLayoutManager);
 //                    rview.setItemAnimator(new DefaultItemAnimator());
-                    rview.setAdapter(adapter);
+                        rview.setAdapter(adapter);
+
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                    }
+                    else
+                    {
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                        emptyText.setVisibility(View.VISIBLE);
+                        emptyLogo.setVisibility(View.VISIBLE);
+                    }
                 } catch (Exception e) {
+                    rotateLoading.stop();
+                    rotateLoading.setVisibility(View.GONE);
                     Toast.makeText(getContext(), "Tidak Ada Posting!", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<PostList> call, Throwable t) {
+                rotateLoading.stop();
+                rotateLoading.setVisibility(View.GONE);
                 Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
             }
 
@@ -89,5 +141,38 @@ public class FragmentPertanian extends Fragment {
 
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    // replace your fragment here
+                    final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                    contentHamburger.setVisibility(View.VISIBLE);
+                    ImageView back2 = (ImageView) getActivity().findViewById(R.id.content_back);
+                    back2.setVisibility(View.GONE);
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.fragmentplace, new FragmentBeranda(), "NewFragmentTag");
+                    TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                    title.setText("SILO");
+                    ft.commit();
+
+                    return true;
+
+                }
+
+                return false;
+            }
+        });
     }
 }

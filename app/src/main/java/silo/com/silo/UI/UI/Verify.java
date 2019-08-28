@@ -76,7 +76,7 @@ public class Verify extends AppCompatActivity {
 //                    Toast.makeText(getApplicationContext(), jsonRes.getJSONObject("data").getString("role"), Toast.LENGTH_SHORT).show();
                         session.createLoginSessions(
                             getIntent().getStringExtra("phoneNumber"),
-                            getIntent().getStringExtra("name"), getIntent().getStringExtra("id"));
+                            getIntent().getStringExtra("name"), getIntent().getStringExtra("id"),"verified");
                         final Intent intent = new Intent(Verify.this, MainActivity.class);
                         progressDialog.dismiss();
                         startActivity(intent);

@@ -3,7 +3,7 @@
     android:id="@+id/landmark"
     android:layout_width="fill_parent"
     android:layout_height="100dp"
-    android:layout_margin="8dp"
+    android:layout_margin="3dp"
     android:padding="10dip"
     android:background="@drawable/container_dropshadow">
 

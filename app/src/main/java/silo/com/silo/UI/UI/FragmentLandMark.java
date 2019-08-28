@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,5 +80,38 @@ public class FragmentLandMark extends Fragment {
         dataSet.add("Harris");
         dataSet.add("Dafam");
 
+    }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    // replace your fragment here
+                    final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                    contentHamburger.setVisibility(View.VISIBLE);
+                    ImageView back2 = (ImageView) getActivity().findViewById(R.id.content_back);
+                    back2.setVisibility(View.GONE);
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.fragmentplace, new FragmentBeranda(), "NewFragmentTag");
+                    TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                    title.setText("SILO");
+                    ft.commit();
+
+                    return true;
+
+                }
+
+                return false;
+            }
+        });
     }
 }

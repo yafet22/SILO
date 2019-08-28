@@ -47,7 +47,7 @@ public class FragmentBeranda extends Fragment {
 //    private List<Customer> CustomerBundleFull;
 //    private AdapterBeranda berandaAdapter;
 //    private CustomerList customerList1;
-    FrameLayout hotel;
+    FrameLayout hotel,bencanaAlam,pertanian;
     RelativeLayout.LayoutParams fragmentparams;
     View fragmentlayout;
     TextView title;
@@ -106,6 +106,8 @@ public class FragmentBeranda extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.frg_beranda,container,false);
         hotel = v.findViewById(R.id.Hotel);
+        bencanaAlam = v.findViewById(R.id.BencanaAlam);
+        pertanian = v.findViewById(R.id.Pertanian);
 
         hotel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +116,34 @@ public class FragmentBeranda extends Fragment {
                 ft.replace(R.id.fragmentplace, new FragmentLandMark(), "NewFragmentTag");
                 TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
                 title.setText("Hotel");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+        bencanaAlam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragmentplace, new FragmentBencana(), "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Bencana Alam");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+        pertanian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragmentplace, new FragmentPertanian(), "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Pertanian");
                 final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
                 contentHamburger.setVisibility(View.GONE);
 

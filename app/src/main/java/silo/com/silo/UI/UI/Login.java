@@ -99,7 +99,8 @@ public class Login extends AppCompatActivity {
                         JSONObject jsonRes = new JSONObject(response.body().string());
                         session.createLoginSessions(
                                 jsonRes.getJSONObject("data").getString("phone_number"),
-                                jsonRes.getJSONObject("data").getString("name"), jsonRes.getJSONObject("data").getString("id_user"));
+                                jsonRes.getJSONObject("data").getString("name"), jsonRes.getJSONObject("data").getString("id_user")
+                                , jsonRes.getJSONObject("data").getString("status"));
                         final Intent intent = new Intent(Login.this, MainActivity.class);
 
                         Toast.makeText(getApplicationContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();

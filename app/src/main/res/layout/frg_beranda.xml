@@ -22,11 +22,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/scrollView"
         android:layout_marginTop="25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" >
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -36,8 +37,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
-
                 <LinearLayout
 
                     android:layout_width="0dp"
@@ -63,7 +64,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_hotel_black_24dp"/>
+                                android:src="@drawable/ic_directions_run_black_24dp"
+                                android:tint="@color/redSilo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -72,10 +74,10 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Hotel"/>
+                                android:text="Kebencanaan"/>
                         </LinearLayout>
                         <FrameLayout
-                            android:id="@+id/Hotel"
+                            android:id="@+id/BencanaAlam"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                         </FrameLayout>
@@ -84,50 +86,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:layout_marginRight="5dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_restaurant_black_24dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#bcbcbc"
-                                android:textSize="14sp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="15dp"
-                                android:text="Restaurant"/>
-                        </LinearLayout>
-                        <FrameLayout
-                            android:id="@+id/Restaurant"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </FrameLayout>
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
 
 
                 <LinearLayout
@@ -153,7 +111,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_theaters_black_24dp"/>
+                                android:tint="@color/redSilo"
+                                android:src="@drawable/ic_local_florist_blue_24dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -162,10 +121,10 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Theaters"/>
+                                android:text="Pertanian"/>
                         </LinearLayout>
                         <FrameLayout
-                            android:id="@+id/Theaters"
+                            android:id="@+id/Pertanian"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                         </FrameLayout>
@@ -174,14 +133,8 @@
 
 
                 </LinearLayout>
-
 
             </LinearLayout>
-
-
-
-            //Row 2
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -215,7 +168,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_consultancy"/>
+                                android:src="@drawable/ic_consultancy"
+                                android:tint="@color/redSilo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -224,7 +178,7 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Healthcare"/>
+                                android:text="Kesehatan"/>
                         </LinearLayout>
                         <FrameLayout
                             android:id="@+id/Healthcare"
@@ -259,7 +213,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_online"/>
+                                android:src="@drawable/ic_online"
+                                android:tint="@color/redSilo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -268,7 +223,7 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Retail"/>
+                                android:text="Info Pasar"/>
                         </LinearLayout>
                         <FrameLayout
                             android:id="@+id/Retail"
@@ -281,57 +236,7 @@
 
                 </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:layout_marginRight="5dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center">
-
-                            <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_attach_money_black_24dp"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#bcbcbc"
-                                android:textSize="14sp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="15dp"
-                                android:text="Banks"/>
-                        </LinearLayout>
-                        <FrameLayout
-                            android:id="@+id/Banks"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </FrameLayout>
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
-
             </LinearLayout>
-
-
-            //Row 3
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -365,7 +270,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_local_cafe_black_24dp"/>
+                                android:src="@drawable/ic_hotel_black_24dp"
+                                android:tint="@color/redSilo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -374,10 +280,10 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Cafes"/>
+                                android:text="Penginapan"/>
                         </LinearLayout>
                         <FrameLayout
-                            android:id="@+id/Cafes"
+                            android:id="@+id/Hotel"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                         </FrameLayout>
@@ -409,7 +315,8 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/ic_more_horiz_black_24dp"/>
+                                android:src="@drawable/ic_restaurant_black_24dp"
+                                android:tint="@color/redSilo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -418,10 +325,10 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="other"/>
+                                android:text="Restoran"/>
                         </LinearLayout>
                         <FrameLayout
-                            android:id="@+id/other"
+                            android:id="@+id/Restaurant"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                         </FrameLayout>
@@ -430,45 +337,93 @@
 
 
                 </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:background="#f7f6f6"
-                    android:layout_marginRight="5dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="center">
-
-
-
-
-                        </LinearLayout>
-                        <FrameLayout
-                            android:id="@+id/onlinepurcahse"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </FrameLayout>
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="125dp"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:orientation="horizontal">-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#FFFFFF"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:gravity="center">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:gravity="center">-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:gravity="center">-->
+
+                            <!--<ImageView-->
+                                <!--android:layout_width="35dp"-->
+                                <!--android:layout_height="35dp"-->
+                                <!--android:layout_marginTop="25dp"-->
+                                <!--android:src="@drawable/ic_theaters_black_24dp"-->
+                                <!--android:tint="@color/redSilo"/>-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="#bcbcbc"-->
+                                <!--android:textSize="14sp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:layout_marginBottom="15dp"-->
+                                <!--android:text="Hiburan"/>-->
+                        <!--</LinearLayout>-->
+                        <!--<FrameLayout-->
+                            <!--android:id="@+id/Theaters"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent">-->
+                        <!--</FrameLayout>-->
+
+                    <!--</RelativeLayout>-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#f7f6f6"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:gravity="center">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:gravity="center">-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:gravity="center">-->
+                        <!--</LinearLayout>-->
+                        <!--<FrameLayout-->
+                            <!--android:id="@+id/emergancy2"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent">-->
+                        <!--</FrameLayout>-->
+
+                    <!--</RelativeLayout>-->
+
+
+                <!--</LinearLayout>-->
+
+
+            <!--</LinearLayout>-->
 
             //Row4
 

@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/endblue"
+    android:background="@color/redSilo"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         style="@style/Toolbar"
         app:contentInsetStart="0dp"
-        android:background="@color/endblue">
+        android:background="@color/redSilo">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
 
         <TextView
             style="@style/TextView.GuillotineItem"
-            android:text="Profile"
+            android:text="Profil"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
@@ -55,20 +55,20 @@
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/activity_group"
-        style="@style/LinearLayout.GuillotineItem">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/activity_group"-->
+        <!--style="@style/LinearLayout.GuillotineItem">-->
 
-        <ImageView
-            style="@style/ImageView.GuillotineItem"
-            android:src="@drawable/ic_activity_active"
-            android:tint="@color/colorAccent"/>
+        <!--<ImageView-->
+            <!--style="@style/ImageView.GuillotineItem"-->
+            <!--android:src="@drawable/ic_activity_active"-->
+            <!--android:tint="@color/colorAccent"/>-->
 
-        <TextView
-            style="@style/TextView.GuillotineItem.Selected"
-            android:text="Website"
-            android:textColor="@color/colorAccent" />
-    </LinearLayout>
+        <!--<TextView-->
+            <!--style="@style/TextView.GuillotineItem.Selected"-->
+            <!--android:text="Website"-->
+            <!--android:textColor="@color/colorAccent" />-->
+    <!--</LinearLayout>-->
 
     <View
         android:layout_width="match_parent"
@@ -85,7 +85,7 @@
         <TextView
             android:id="@+id/login"
             style="@style/TextView.GuillotineItem"
-            android:text="Login"
+            android:text="Masuk"
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 </LinearLayout>

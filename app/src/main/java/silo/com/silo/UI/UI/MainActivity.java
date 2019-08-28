@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         back.setVisibility(View.GONE);
 
+        bottombar.setVisibility(View.GONE);
+
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(session.isLoggedIn()) {
-            log.setText("Logout");
+            log.setText("Keluar");
             guillotineMenu.findViewById(R.id.login_group).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -250,8 +252,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-
+    public void onBackPressed(){
+        if(getFragmentManager().getBackStackEntryCount() == 1) {
+            moveTaskToBack(false);
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 
     @Override
