@@ -7,15 +7,21 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.victor.loading.rotate.RotateLoading;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,28 +29,51 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import silo.com.silo.R;
+import silo.com.silo.UI.Controller.ApiClient;
+import silo.com.silo.UI.Controller.LandMark;
+import silo.com.silo.UI.Controller.LandMarkList;
+import silo.com.silo.UI.Controller.Post;
+import silo.com.silo.UI.Controller.PostList;
 
 public class FragmentLandMark extends Fragment {
     View v;
     private RecyclerView rview;
     private AdapterLandMark adapter;
     private RecyclerView.LayoutManager layout;
-    private ArrayList<String> dataSet;
+    private List<LandMarkList> landMarkList;
+    private AdapterLandMark feedAdapter;
+    private List<LandMark> LandMarkBundleFull;
+    private LandMarkList landMarkList1;
+
+    private ImageView emptyLogo;
+    private TextView emptyText;
+    private RotateLoading rotateLoading;
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.frg_landmark,container,false);
         rview = v.findViewById(R.id.landmark_list);
-        dataSet = new ArrayList<>();
-        initDataset();
         rview.setHasFixedSize(true);
         layout = new LinearLayoutManager(getContext());
         rview.setLayoutManager(layout);
 
-        adapter = new AdapterLandMark(dataSet,getContext());
+        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
 
-        rview.setAdapter(adapter);
+        relativeLayout.setGravity(Gravity.CENTER);
+
+        emptyLogo = v.findViewById(R.id.emptyLogo);
+        emptyText = v.findViewById(R.id.emptyText);
+        rotateLoading = v.findViewById(R.id.rotateloading);
+
+        rotateLoading.start();
 
         ImageView back = (ImageView) getActivity().findViewById(R.id.content_back);
         back.setVisibility(View.VISIBLE);
@@ -63,23 +92,76 @@ public class FragmentLandMark extends Fragment {
             }
         });
 
+        landMarkList = new ArrayList<>();
+        feedAdapter = new AdapterLandMark(landMarkList1,this.getContext());
+
+        String category = getArguments().getString("category");
+//        Toast.makeText(getContext(),"cek : " + myStr, Toast.LENGTH_SHORT).show();
+
+        Retrofit retrofit= new retrofit2.Retrofit.Builder()
+                .baseUrl("http://silo.yafetrakan.com/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiClient apiClient = retrofit.create(ApiClient.class);
+
+        Call<LandMarkList> landMarkGet = null;
+
+        if(category.equalsIgnoreCase("Penginapan"))
+        {
+             landMarkGet = apiClient.getPenginapan();
+        }
+        else if(category.equalsIgnoreCase("Restoran"))
+        {
+            landMarkGet = apiClient.getRestoran();
+        }
+        else if(category.equalsIgnoreCase("Kesehatan"))
+        {
+            landMarkGet = apiClient.getKesehatan();
+        }
+        else if(category.equalsIgnoreCase("InfoPasar"))
+        {
+            landMarkGet = apiClient.getInfoPasar();
+        }
+
+        landMarkGet.enqueue(new Callback<LandMarkList>() {
+            @Override
+            public void onResponse(Call<LandMarkList> call, Response<LandMarkList> response) {
+                try {
+                    if(!response.body().getData().isEmpty()) {
+                        adapter = new AdapterLandMark(response.body(), getContext());
+                        LandMarkBundleFull = response.body().getData();
+                        rview.setAdapter(adapter);
+
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+                        relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+                    }
+                    else {
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                        emptyText.setVisibility(View.VISIBLE);
+                        emptyLogo.setVisibility(View.VISIBLE);
+                    }
+                } catch (Exception e) {
+                    rotateLoading.stop();
+                    rotateLoading.setVisibility(View.GONE);
+                    Toast.makeText(getContext(), "Tidak Ada Posting!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LandMarkList> call, Throwable t) {
+//                rotateLoading.stop();
+//                rotateLoading.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
         return v;
-    }
-
-    private void initDataset(){
-
-        /**
-         * Tambahkan item ke dataset
-         * dalam prakteknya bisa bermacam2
-         * tidak hanya String seperti di kasus ini
-         */
-        dataSet.add("Sahid Hotel");
-        dataSet.add("Yellow Star");
-        dataSet.add("Merapi Merbabu");
-        dataSet.add("JW Marriot");
-        dataSet.add("Harris");
-        dataSet.add("Dafam");
-
     }
 
     @Override

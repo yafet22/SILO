@@ -11,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -47,7 +48,7 @@ public class FragmentBeranda extends Fragment {
 //    private List<Customer> CustomerBundleFull;
 //    private AdapterBeranda berandaAdapter;
 //    private CustomerList customerList1;
-    FrameLayout hotel,bencanaAlam,pertanian;
+    FrameLayout hotel,bencanaAlam,pertanian,restoran,retail,kesehatan;
     RelativeLayout.LayoutParams fragmentparams;
     View fragmentlayout;
     TextView title;
@@ -108,12 +109,23 @@ public class FragmentBeranda extends Fragment {
         hotel = v.findViewById(R.id.Hotel);
         bencanaAlam = v.findViewById(R.id.BencanaAlam);
         pertanian = v.findViewById(R.id.Pertanian);
+        kesehatan = v.findViewById(R.id.Healthcare);
+        retail = v.findViewById(R.id.Retail);
+        restoran = v.findViewById(R.id.Restaurant);
+
+        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+        relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
 
         hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.fragmentplace, new FragmentLandMark(), "NewFragmentTag");
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Penginapan");
+                FragmentLandMark fragmentLandMark = new FragmentLandMark();
+                fragmentLandMark.setArguments(bundle);
+                ft.replace(R.id.fragmentplace, fragmentLandMark, "NewFragmentTag");
                 TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
                 title.setText("Hotel");
                 final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
@@ -122,6 +134,62 @@ public class FragmentBeranda extends Fragment {
                 ft.commit();
             }
         });
+
+        restoran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Restoran");
+                FragmentLandMark fragmentLandMark = new FragmentLandMark();
+                fragmentLandMark.setArguments(bundle);
+                ft.replace(R.id.fragmentplace, fragmentLandMark, "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Restoran");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+        kesehatan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Kesehatan");
+                FragmentLandMark fragmentLandMark = new FragmentLandMark();
+                fragmentLandMark.setArguments(bundle);
+                ft.replace(R.id.fragmentplace, fragmentLandMark, "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Kesehatan");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+        retail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "InfoPasar");
+                FragmentLandMark fragmentLandMark = new FragmentLandMark();
+                fragmentLandMark.setArguments(bundle);
+                ft.replace(R.id.fragmentplace, fragmentLandMark, "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Info Pasar");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+
 
         bencanaAlam.setOnClickListener(new View.OnClickListener() {
             @Override

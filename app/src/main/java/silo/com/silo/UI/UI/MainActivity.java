@@ -108,21 +108,29 @@ public class MainActivity extends AppCompatActivity {
 //        });
 //
 
-        guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent intent = new Intent(MainActivity.this, Profile.class);
-                startActivity(intent);
-            }
-        });
+
+        if(session.isLoggedIn()) {
+            guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final Intent intent = new Intent(MainActivity.this, Profile.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this, "Akun belum login", Toast.LENGTH_SHORT).show();
+        }
+
 
         guillotineMenu.findViewById(R.id.help_group).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(MainActivity.this, Help.class);
-                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Fitur masih dikembangkan", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         if(session.isLoggedIn()) {
             log.setText("Keluar");

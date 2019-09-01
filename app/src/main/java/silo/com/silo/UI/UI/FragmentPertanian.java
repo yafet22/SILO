@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +65,10 @@ public class FragmentPertanian extends Fragment {
         rview.setHasFixedSize(true);
         layout = new LinearLayoutManager(getContext());
         rview.setLayoutManager(layout);
+
+        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+        relativeLayout.setGravity(Gravity.CENTER);
 
         emptyLogo = v.findViewById(R.id.emptyLogo);
         emptyText = v.findViewById(R.id.emptyText);

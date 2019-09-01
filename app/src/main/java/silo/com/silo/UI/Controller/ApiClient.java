@@ -52,4 +52,19 @@ public interface ApiClient {
     Call<CommentData> addComment(@Field("content") String content,
                                    @Field("id_posting") int id_posting,
                                    @Field("id_user") int id_user);
+
+    @GET("landmark")
+    Call<LandMarkList> getLandmark();
+
+    @GET("kesehatan")
+    Call<LandMarkList> getKesehatan();
+
+    @GET("penginapan")
+    Call<LandMarkList> getPenginapan();
+
+    @GET("infopasar")
+    Call<LandMarkList> getInfoPasar();
+
+    @GET("restoran")
+    Call<LandMarkList> getRestoran();
 }

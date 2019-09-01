@@ -12,6 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +33,10 @@ public class UserComment extends AppCompatActivity {
 
     RecyclerView rview;
     private AdapterComment adapter;
-    private TextView content;
+    private TextView content,title,emptyText;
     private SearchView search;
     private RecyclerView.LayoutManager layout;
-    private ImageView backButton;
+    private ImageView backButton,photo;
     private List<Comment> CustomerBundleFull;
     private List<Comment> details = new ArrayList<>();
 
@@ -49,8 +53,9 @@ public class UserComment extends AppCompatActivity {
             }
         });
 
-
+        title.setText(getIntent().getStringExtra("title"));
         content.setText(getIntent().getStringExtra("desc"));
+        Picasso.get().load("http://silo.yafetrakan.com/images/"+getIntent().getStringExtra("photo")).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(photo);
 
         Retrofit retrofit= new retrofit2.Retrofit.Builder()
                 .baseUrl("http://silo.yafetrakan.com/api/")
@@ -65,11 +70,16 @@ public class UserComment extends AppCompatActivity {
             @Override
             public void onResponse(Call<CommentList> call, Response<CommentList> response) {
                 try {
-                    adapter = new AdapterComment(response.body().getData(),UserComment.this);
-                    CustomerBundleFull =  response.body().getData();
-
-                    rview.setAdapter(adapter);
+                    if(!response.body().getData().isEmpty()) {
+                        adapter = new AdapterComment(response.body().getData(), UserComment.this);
+                        CustomerBundleFull = response.body().getData();
+                        rview.setAdapter(adapter);
+                    }
+                    else {
+                        emptyText.setVisibility(View.VISIBLE);
+                    }
                 } catch (Exception e) {
+                    emptyText.setVisibility(View.VISIBLE);
                     Toast.makeText(getApplicationContext(), "Tidak Ada Comment!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -88,6 +98,9 @@ public class UserComment extends AppCompatActivity {
         layout = new LinearLayoutManager(getApplicationContext());
         rview.setLayoutManager(layout);
         content = findViewById(R.id.post_content);
+        title = findViewById(R.id.post_title);
+        photo = findViewById(R.id.post_photo);
         backButton = findViewById(R.id.content_back);
+        emptyText = findViewById(R.id.emptyText);
     }
 }

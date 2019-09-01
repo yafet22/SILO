@@ -41,7 +41,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_arrow_back_white_24dp"
-                android:tint="@color/bpDarker_blue" />
+                android:tint="@color/redSilo" />
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -50,13 +50,13 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:text="@string/app_name"
-                android:textColor="@color/bpDarker_blue"
+                android:textColor="@color/redSilo"
                 android:textSize="@dimen/guillotine_item_text_size" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/photoLandMark"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_gravity="center"
@@ -65,6 +65,7 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
+        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nama Tempat"
@@ -79,7 +80,8 @@
         android:layout_height="wrap_content"
         style="?android:attr/ratingBarStyleSmall"
         android:theme="@style/RatingBar"
-        android:progressTint="@color/yellowwarning"
+        android:progressTint="@color/redSilo"
+        android:progressBackgroundTint="@color/redSilo"
         android:numStars="5"
         android:rating="3"
         android:stepSize="0.5"/>
@@ -88,7 +90,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Deskripsi : "/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="left"
         android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."/>
 
     <!--<RatingBar-->

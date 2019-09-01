@@ -92,7 +92,9 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, UserComment.class);
                 intent.putExtra("id", data.getId());
-                intent.putExtra("desc",data.getDescription());
+                intent.putExtra("desc", data.getDescription());
+                intent.putExtra("title", data.getTitle());
+                intent.putExtra("photo", data.getPhoto());
                 mContext.startActivity(intent);
             }
         });

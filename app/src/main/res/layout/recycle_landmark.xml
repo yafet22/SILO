@@ -8,24 +8,24 @@
     android:background="@drawable/container_dropshadow">
 
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:id="@+id/previewImage"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="6dip"
+        android:layout_marginRight="16dip"
         android:contentDescription="TODO"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/tv_subtitle"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/icon"
+        android:layout_toRightOf="@id/previewImage"
         android:gravity="center_vertical"
         android:text="Nama Tempat"
         android:textColor="@android:color/black"
@@ -37,7 +37,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/icon"
+        android:layout_toRightOf="@id/previewImage"
         android:gravity="center_vertical"
         android:orientation="horizontal">
         <RatingBar
@@ -46,7 +46,8 @@
             android:layout_height="wrap_content"
             style="?android:attr/ratingBarStyleSmall"
             android:theme="@style/RatingBar"
-            android:progressTint="@color/yellowwarning"
+            android:progressTint="@color/redSilo"
+            android:progressBackgroundTint="@color/redSilo"
             android:numStars="5"
             android:rating="3"
             android:stepSize="0.5"/>

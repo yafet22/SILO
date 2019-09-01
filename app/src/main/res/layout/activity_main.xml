@@ -69,10 +69,11 @@
         </android.support.v7.widget.Toolbar>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="50dp"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             app:layout_constraintBottom_toTopOf="@+id/NavigationBot"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

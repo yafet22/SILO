@@ -8,11 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +68,10 @@ public class FragmentBencana extends Fragment {
         emptyLogo = v.findViewById(R.id.emptyLogo);
         emptyText = v.findViewById(R.id.emptyText);
         rotateLoading = v.findViewById(R.id.rotateloading);
+
+        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+        relativeLayout.setGravity(Gravity.CENTER);
 
         rotateLoading.start();
 
