@@ -55,6 +55,22 @@
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/verify_group"
+        style="@style/LinearLayout.GuillotineItem"
+        android:layout_marginTop="@dimen/guillotine_medium_margin">
+
+        <ImageView
+            style="@style/ImageView.GuillotineItem"
+            android:src="@drawable/ic_activity_active" />
+
+        <TextView
+            style="@style/TextView.GuillotineItem"
+            android:text="Verifikasi Akun"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+
     <!--<LinearLayout-->
         <!--android:id="@+id/activity_group"-->
         <!--style="@style/LinearLayout.GuillotineItem">-->

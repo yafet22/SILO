@@ -1,7 +1,9 @@
 package silo.com.silo.UI.UI;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,15 @@ public class LandMarkDescription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_land_mark_description);
         init();
+
+        ImageView back = (ImageView) findViewById(R.id.content_back);
+        back.setVisibility(View.VISIBLE);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         landMarkName.setText(getIntent().getStringExtra("name"));
         desc.setText(getIntent().getStringExtra("desc"));

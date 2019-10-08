@@ -104,7 +104,7 @@ public class FragmentBencana extends Fragment {
 
         ApiClient apiClient = retrofit.create(ApiClient.class);
 
-        Call<PostList> supplierGet = apiClient.getPosts();
+        Call<PostList> supplierGet = apiClient.getBencana();
 
         supplierGet.enqueue(new Callback<PostList>() {
             @Override
@@ -121,6 +121,9 @@ public class FragmentBencana extends Fragment {
 
                             rotateLoading.stop();
                             rotateLoading.setVisibility(View.GONE);
+                            RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+                            relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
                         }
                         else {
                             rotateLoading.stop();

@@ -41,7 +41,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_close_black_24dp"
-                android:tint="@color/bpDarker_blue" />
+                android:tint="@color/redSilo" />
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -50,89 +50,44 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:text="Masukan Anda"
-                android:textColor="@color/bpDarker_blue"
+                android:textColor="@color/redSilo"
                 android:textSize="@dimen/guillotine_item_text_size" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:orientation="vertical"
-        android:gravity="center"
-        android:background="@color/radial_gray_light"
+        android:gravity="center_horizontal"
         >
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="85dp"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="To : "/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="bantuan@silo.com"/>
-        </LinearLayout>
+            android:textSize="30dp"
+            android:paddingBottom="20dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Kirim ke :"
 
-        <LinearLayout
+            />
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="85dp"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Cc/Bcc : "/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="bantuan@silo.com"/>
-        </LinearLayout>
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Telp/ WA : 081578601570 (An. Thomas Adi P.S)"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="85dp"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Subject : "/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="bantuan@silo.com"/>
-        </LinearLayout>
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Email : Thomas.adi.ps@uajy.ac.id"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:text="Tulis Masukan"/>
-
-    <EditText
-        android:id="@+id/comments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btnSend"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/endblue"
-        android:text="Kirim"
-        android:textColor="@color/bgLogin"
-        android:textSize="16sp"
-        />
 
 </LinearLayout>

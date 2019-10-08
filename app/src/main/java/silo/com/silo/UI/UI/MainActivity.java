@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NotificationCompatSideChannelService;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -127,10 +128,26 @@ public class MainActivity extends AppCompatActivity {
         guillotineMenu.findViewById(R.id.help_group).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Fitur masih dikembangkan", Toast.LENGTH_SHORT).show();
+                final Intent intent = new Intent(MainActivity.this, Help.class);
+                startActivity(intent);
             }
         });
 
+        if(session.getKeyStatus().equalsIgnoreCase("pending"))
+        {
+            guillotineMenu.findViewById(R.id.verify_group).setVisibility(View.VISIBLE);
+            guillotineMenu.findViewById(R.id.verify_group).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                final Intent intent = new Intent(MainActivity.this, Verify.class);
+                startActivity(intent);
+                }
+            });
+        }
+        else
+        {
+            guillotineMenu.findViewById(R.id.verify_group).setVisibility(View.GONE);
+        }
 
         if(session.isLoggedIn()) {
             log.setText("Keluar");

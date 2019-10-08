@@ -120,6 +120,9 @@ public class FragmentPertanian extends Fragment {
 
                         rotateLoading.stop();
                         rotateLoading.setVisibility(View.GONE);
+                        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+
+                        relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
                     }
                     else
                     {

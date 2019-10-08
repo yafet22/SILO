@@ -58,16 +58,15 @@
             android:gravity="center_vertical">
             <EditText
                 android:id="@+id/usercomment"
-                android:layout_width="340dp"
+                android:layout_width="300dp"
                 android:textSize="13dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/redSilo"
                 android:hint="Tuliskan Komentar anda"/>
             <TextView
                 android:id="@+id/btnSendComment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:textSize="14dp"
                 android:textColor="@color/redSilo"
                 android:textStyle="bold"
