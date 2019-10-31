@@ -113,10 +113,6 @@ public class FragmentBencana extends Fragment {
                         if(!response.body().getData().isEmpty()) {
                             adapter = new AdapterFeed(response.body(), getContext());
                             PostBundleFull = response.body().getData();
-                            //                   adapter.notifyDataSetChanged();
-                            //                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-                            //                    rview.setLayoutManager(mLayoutManager);
-                            //                    rview.setItemAnimator(new DefaultItemAnimator());
                             rview.setAdapter(adapter);
 
                             rotateLoading.stop();
