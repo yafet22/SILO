@@ -326,7 +326,7 @@
                                 android:textSize="14sp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="Restoran"/>
+                                android:text="Rumah Makan"/>
                         </LinearLayout>
                         <FrameLayout
                             android:id="@+id/Restaurant"
