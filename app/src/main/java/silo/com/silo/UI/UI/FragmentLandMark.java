@@ -99,7 +99,7 @@ public class FragmentLandMark extends Fragment {
 //        Toast.makeText(getContext(),"cek : " + myStr, Toast.LENGTH_SHORT).show();
 
         Retrofit retrofit= new retrofit2.Retrofit.Builder()
-                .baseUrl("http://silo.yafetrakan.com/api/")
+                .baseUrl("http://siloselo.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -122,6 +122,10 @@ public class FragmentLandMark extends Fragment {
         else if(category.equalsIgnoreCase("InfoPasar"))
         {
             landMarkGet = apiClient.getInfoPasar();
+        }
+        else if(category.equalsIgnoreCase("Pariwisata"))
+        {
+            landMarkGet = apiClient.getPariwisata();
         }
 
         landMarkGet.enqueue(new Callback<LandMarkList>() {

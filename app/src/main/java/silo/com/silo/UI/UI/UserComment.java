@@ -55,10 +55,10 @@ public class UserComment extends AppCompatActivity {
 
         title.setText(getIntent().getStringExtra("title"));
         content.setText(getIntent().getStringExtra("desc"));
-        Picasso.get().load("http://silo.yafetrakan.com/images/"+getIntent().getStringExtra("photo")).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(photo);
+        Picasso.get().load("http://siloselo.com/images/"+getIntent().getStringExtra("photo")).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(photo);
 
         Retrofit retrofit= new retrofit2.Retrofit.Builder()
-                .baseUrl("http://silo.yafetrakan.com/api/")
+                .baseUrl("http://siloselo.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

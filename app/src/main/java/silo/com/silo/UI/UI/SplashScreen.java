@@ -22,6 +22,7 @@ public class SplashScreen extends AppCompatActivity {
                 //setelah loading maka akan langsung berpindah ke home activity
                 Intent home=new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(home);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
 
             }

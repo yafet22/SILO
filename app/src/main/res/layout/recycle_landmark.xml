@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="16dip"
         android:contentDescription="TODO"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_silo" />
 
     <TextView
         android:id="@+id/tv_title"

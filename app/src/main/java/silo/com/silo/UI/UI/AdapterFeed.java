@@ -85,7 +85,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
 
         myViewHolder.title.setText(data.getTitle());
         myViewHolder.description.setText(data.getDescription());
-        Picasso.get().load("http://silo.yafetrakan.com/images/"+data.getPhoto()).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(myViewHolder.photo);
+        Picasso.get().load("http://siloselo.com/images/"+data.getPhoto()).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(myViewHolder.photo);
 
         myViewHolder.see_comment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +114,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
                             progressDialog.show();
 
                             Retrofit retrofit= new retrofit2.Retrofit.Builder()
-                                    .baseUrl("http://silo.yafetrakan.com/api/")
+                                    .baseUrl("http://siloselo.com/api/")
                                     .addConverterFactory(GsonConverterFactory.create())
                                     .build();
 

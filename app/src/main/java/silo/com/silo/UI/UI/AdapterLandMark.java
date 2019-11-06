@@ -86,7 +86,7 @@ public class AdapterLandMark extends RecyclerView.Adapter<AdapterLandMark.MyView
         final LandMark data = LandMarkBundle.getData().get(i);
         final int ifinal = myViewHolder.getAdapterPosition();
 
-        Picasso.get().load("http://silo.yafetrakan.com/images/"+data.getPhoto()).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(myViewHolder.photo);
+        Picasso.get().load("http://siloselo.com/images/"+data.getPhoto()).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(myViewHolder.photo);
         myViewHolder.name.setText(data.getTitle());
 
         myViewHolder.landmark.setOnClickListener(new View.OnClickListener() {

@@ -62,7 +62,7 @@
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_silo" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="6dip"
             android:contentDescription="TODO"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_silo" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

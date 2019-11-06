@@ -48,7 +48,7 @@ public class FragmentBeranda extends Fragment {
 //    private List<Customer> CustomerBundleFull;
 //    private AdapterBeranda berandaAdapter;
 //    private CustomerList customerList1;
-    FrameLayout hotel,bencanaAlam,pertanian,restoran,retail,kesehatan;
+    FrameLayout hotel,bencanaAlam,pertanian,restoran,retail,kesehatan,pariwisata,pelatihan;
     RelativeLayout.LayoutParams fragmentparams;
     View fragmentlayout;
     TextView title;
@@ -112,6 +112,8 @@ public class FragmentBeranda extends Fragment {
         kesehatan = v.findViewById(R.id.Healthcare);
         retail = v.findViewById(R.id.Retail);
         restoran = v.findViewById(R.id.Restaurant);
+        pariwisata = v.findViewById(R.id.Pariwisata);
+        pelatihan = v.findViewById(R.id.Pelatihan);
 
         RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
 
@@ -189,6 +191,24 @@ public class FragmentBeranda extends Fragment {
             }
         });
 
+        pariwisata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Bundle bundle = new Bundle();
+                bundle.putString("category", "Pariwisata");
+                FragmentLandMark fragmentLandMark = new FragmentLandMark();
+                fragmentLandMark.setArguments(bundle);
+                ft.replace(R.id.fragmentplace, fragmentLandMark, "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Pariwisata");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
 
 
         bencanaAlam.setOnClickListener(new View.OnClickListener() {
@@ -212,6 +232,20 @@ public class FragmentBeranda extends Fragment {
                 ft.replace(R.id.fragmentplace, new FragmentPertanian(), "NewFragmentTag");
                 TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
                 title.setText("Pertanian");
+                final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
+                contentHamburger.setVisibility(View.GONE);
+
+                ft.commit();
+            }
+        });
+
+        pelatihan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragmentplace, new FragmentKegiatan(), "NewFragmentTag");
+                TextView title = (TextView) getActivity().findViewById(R.id.toolbar_title);
+                title.setText("Pelatihan");
                 final ImageView contentHamburger = (ImageView) getActivity().findViewById(R.id.content_hamburger);
                 contentHamburger.setVisibility(View.GONE);
 

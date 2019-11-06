@@ -36,7 +36,7 @@ public class LandMarkDescription extends AppCompatActivity {
         landMarkName.setText(getIntent().getStringExtra("name"));
         desc.setText(getIntent().getStringExtra("desc"));
 
-        Picasso.get().load("http://silo.yafetrakan.com/images/"+getIntent().getStringExtra("photo")).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(photo);
+        Picasso.get().load("http://siloselo.com/images/"+getIntent().getStringExtra("photo")).memoryPolicy(MemoryPolicy.NO_CACHE) .networkPolicy(NetworkPolicy.NO_CACHE).into(photo);
 
     }
 

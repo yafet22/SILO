@@ -34,7 +34,7 @@ import silo.com.silo.UI.Controller.Post;
 import silo.com.silo.UI.Controller.PostList;
 import silo.com.silo.UI.Session.SessionManager;
 
-public class FragmentBencana extends Fragment {
+public class FragmentKegiatan extends Fragment {
     View v;
     private RecyclerView rview;
     private AdapterFeed adapter;
@@ -59,8 +59,8 @@ public class FragmentBencana extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.frg_bencana,container,false);
-        rview = v.findViewById(R.id.bencana_list);
+        v = inflater.inflate(R.layout.frg_kegiatan,container,false);
+        rview = v.findViewById(R.id.kegiatan_list);
         rview.setHasFixedSize(true);
         layout = new LinearLayoutManager(getContext());
         rview.setLayoutManager(layout);
@@ -104,29 +104,29 @@ public class FragmentBencana extends Fragment {
 
         ApiClient apiClient = retrofit.create(ApiClient.class);
 
-        Call<PostList> supplierGet = apiClient.getBencana();
+        Call<PostList> supplierGet = apiClient.getKegiatan();
 
         supplierGet.enqueue(new Callback<PostList>() {
             @Override
             public void onResponse(Call<PostList> call, Response<PostList> response) {
                 try {
-                        if(!response.body().getData().isEmpty()) {
-                            adapter = new AdapterFeed(response.body(), getContext());
-                            PostBundleFull = response.body().getData();
-                            rview.setAdapter(adapter);
+                    if(!response.body().getData().isEmpty()) {
+                        adapter = new AdapterFeed(response.body(), getContext());
+                        PostBundleFull = response.body().getData();
+                        rview.setAdapter(adapter);
 
-                            rotateLoading.stop();
-                            rotateLoading.setVisibility(View.GONE);
-                            RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                        RelativeLayout relativeLayout = getActivity().findViewById(R.id.relativeLayout);
 
-                            relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
-                        }
-                        else {
-                            rotateLoading.stop();
-                            rotateLoading.setVisibility(View.GONE);
-                            emptyText.setVisibility(View.VISIBLE);
-                            emptyLogo.setVisibility(View.VISIBLE);
-                        }
+                        relativeLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+                    }
+                    else {
+                        rotateLoading.stop();
+                        rotateLoading.setVisibility(View.GONE);
+                        emptyText.setVisibility(View.VISIBLE);
+                        emptyLogo.setVisibility(View.VISIBLE);
+                    }
                 } catch (Exception e) {
                     rotateLoading.stop();
                     rotateLoading.setVisibility(View.GONE);

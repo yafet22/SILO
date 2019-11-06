@@ -85,7 +85,7 @@ public class Login extends AppCompatActivity {
             progressDialog.show();
 
             Retrofit retrofit= new retrofit2.Retrofit.Builder()
-                    .baseUrl("http://silo.yafetrakan.com/api/")
+                    .baseUrl("http://siloselo.com/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 

@@ -44,6 +44,9 @@ public interface ApiClient {
     @GET("pertanian")
     Call<PostList> getPertanian();
 
+    @GET("pelatihan")
+    Call<PostList> getKegiatan();
+
     @GET("comment-post/{id}")
     Call<CommentList> getComment(@Path("id") int id);
 
@@ -67,4 +70,7 @@ public interface ApiClient {
 
     @GET("restoran")
     Call<LandMarkList> getRestoran();
+
+    @GET("pariwisata")
+    Call<LandMarkList> getPariwisata();
 }

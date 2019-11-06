@@ -62,7 +62,7 @@
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_silo" />
 
     <TextView
         android:id="@+id/tvName"
