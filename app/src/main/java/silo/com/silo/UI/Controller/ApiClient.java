@@ -9,6 +9,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
@@ -73,4 +74,22 @@ public interface ApiClient {
 
     @GET("pariwisata")
     Call<LandMarkList> getPariwisata();
+
+    @PATCH("profile/{id}")
+    @FormUrlEncoded
+    Call<ResponseBody> updateProfile1(
+            @Path("id") int id,
+            @Field("name")String name,
+            @Field("phone_number")String phone_number,
+            @Field("new_password")String new_password,
+            @Field("old_password")String old_password
+            );
+
+    @PATCH("profile/{id}")
+    @FormUrlEncoded
+    Call<ResponseBody> updateProfile2(
+            @Path("id") int id,
+            @Field("name")String name,
+            @Field("phone_number")String phone_number
+    );
 }
